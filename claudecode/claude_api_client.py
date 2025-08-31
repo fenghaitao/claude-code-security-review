@@ -40,11 +40,6 @@ class ClaudeAPIClient:
         
         # Get API key from environment or parameter
         self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY")
-        if not self.api_key:
-            raise ValueError(
-                "No Anthropic API key found. Please set ANTHROPIC_API_KEY environment variable "
-                "or provide api_key parameter."
-            )
         
         # Initialize Anthropic client
         self.client = Anthropic(api_key=self.api_key)

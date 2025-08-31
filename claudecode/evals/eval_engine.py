@@ -72,9 +72,6 @@ class EvaluationEngine:
         self.verbose = verbose
         self.claude_api_key = os.environ.get('ANTHROPIC_API_KEY', '')
         
-        if not self.claude_api_key:
-            raise ValueError("ANTHROPIC_API_KEY environment variable required")
-        
         # Repository locks for concurrent access
         self._repo_locks: Dict[str, threading.Lock] = {}
         self._locks_lock = threading.Lock()

@@ -82,11 +82,7 @@ def main():
     # Set EVAL_MODE=1 automatically for evaluation runs
     os.environ['EVAL_MODE'] = '1'
     
-    # Check for required environment variables
-    if not os.environ.get('ANTHROPIC_API_KEY'):
-        print("Error: ANTHROPIC_API_KEY environment variable is not set")
-        print("Please set it before running the evaluation")
-        sys.exit(1)
+    # Environment variables will be checked by the evaluation engine if needed
     
     
     # Parse the PR specification
